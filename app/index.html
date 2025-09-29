@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Argo CD Image Updater – Demo</title>
+        <link rel="stylesheet" href="/styles.css" />
+    </head>
+    <body>
+        <main>
+            <h1>Argo CD Image Updater – Demo Site</h1>
+            <p>Build a new container image with a changed picture or text, tag it (e.g. <code>0.1.2</code>), and let Image Updater roll it out.</p>
+            <img src="/assets/hero.png" alt="Demo hero" />
+            <p class="version">Image version: <span id="version">${IMAGE_TAG}</span></p>
+        </main>
+        <script>
+// If IMAGE_TAG env not substituted, fall back to 'unknown'
+        document.getElementById('version').textContent =
+            document.getElementById('version').textContent.replace('${IMAGE_TAG}', 'unknown');
+        </script>
+    </body>
+</html>
