@@ -6,5 +6,5 @@ resources:
 
 
 images:
-  - name: ghcr.io/olavte99/testwebsite:latest
+  - name: ghcr.io/olavte99/testwebsite
     newTag: 0.1.0 # <-- starting tag; Image Updater will bump this
