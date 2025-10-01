@@ -19,7 +19,7 @@ spec:
       containers:
         - name: web
           # Image tag will be set by Kustomize's images transformer
-          image: ghcr.io/olavte99/testwebsite:0.1.1
+          image: ghcr.io/olavte99/testwebsite:latest
           ports:
             - containerPort: 80
           readinessProbe:
