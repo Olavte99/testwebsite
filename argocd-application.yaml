@@ -4,16 +4,12 @@ metadata:
   name: testwebsite
   namespace: argocd
   annotations:
-# Track the web image and allow updates within 0.1.x
-    argocd-image-updater.argoproj.io/image-list: web=ghcr.io/olavte99/testwebsite:latest
-
-
-# Let Image Updater write the new tag back via Argo CD parameters (no Git write required)
+    argocd-image-updater.argoproj.io/image-list: image-alias=ghcr.io/olavte99/testwebsite:latest
     argocd-image-updater.argoproj.io/write-back-method: argocd
+    argocd-image-updater.argoproj.io/web.pull-secret: pullsecret:argocd/ghcr-cred-argo
+    argocd-image-updater.argoproj.io/image-alias.force-update: 'true'
+    argocd-image-updater.argoproj.io/image-alias.update-strategy: latest
 
-
-# (Optional) update strategy per-image, defaults to semver for this constraint
-# argocd-image-updater.argoproj.io/web.update-strategy: semver
 spec:
   project: default
   source:
