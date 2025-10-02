@@ -6,4 +6,4 @@ resources:
 
 images:
 - name: ghcr.io/olavte99/testwebsite
-  newTag: latest
+  newTag: 0.1.11
