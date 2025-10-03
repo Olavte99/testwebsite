@@ -4,11 +4,8 @@ metadata:
   name: testwebsite
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/write-back-method: argocd
-    argocd-image-updater.argoproj.io/web.pull-secret: pullsecret:argocd/ghcr-creds-argo
-    argocd-image-updater.argoproj.io/image-alias.force-update: 'true'
-    argocd-image-updater.argoproj.io/image-alias.update-strategy: digest
-    argocd-image-updater.argoproj.io/write-back-target: kustomization
+    argocd-image-updater.argoproj.io/image-list: my-image=ghcr.io/olavte99/testwebsite:latest
+    argocd-image-updater.argoproj.io/my-image.update-strategy: digest
 
 
 spec:
