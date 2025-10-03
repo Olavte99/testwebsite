@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - deployment.yaml
   - service.yaml
+  - config.yaml
 
 images:
 - name: ghcr.io/olavte99/testwebsite
