@@ -14,8 +14,6 @@ metadata:
 
 spec:
   project: default
-  imagePullSecrets:
-        - name: ghcr-creds-argo
   source:
     repoURL: https://github.com/olavte99/testwebsite.git
     targetRevision: main
