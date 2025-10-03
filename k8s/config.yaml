@@ -12,5 +12,5 @@ data:
       - name: GHCR
         api_url: https://ghcr.io
         prefix: ghcr.io
-        credentials: pullsecret:argocd/ghcr-cred-argo
+        credentials: pullsecret:argocd/ghcr-creds-argo
         default: true
