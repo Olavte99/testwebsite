@@ -10,7 +10,7 @@ data:
   registries.conf: |
     registries:
       - name: GHCR
-        api_url: https://ghcr.io/olavte99/testwebsite
-        prefix: ghcr.io/olavte99/testwebsite
+        api_url: https://ghcr.io
+        prefix: ghcr.io
         credentials: pullsecret:argocd/ghcr-cred-argo
         default: true
