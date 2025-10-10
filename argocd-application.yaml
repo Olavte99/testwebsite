@@ -1,7 +1,6 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: testwebsite
   namespace: argocd
   annotations:
     argocd-image-updater.argoproj.io/image-list: my-image=ghcr.io/olavte99/testwebsite:latest
