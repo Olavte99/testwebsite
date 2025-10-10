@@ -15,7 +15,7 @@ spec:
         app: demo-site
     spec:
       imagePullSecrets:
-        - name: ghcr-creds-argo
+        - name: ghcr-creds
       containers:
         - name: web
           # Image tag will be set by Kustomize's images transformer
