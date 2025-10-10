@@ -6,6 +6,7 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: my-image=ghcr.io/olavte99/testwebsite:latest
     argocd-image-updater.argoproj.io/my-image.update-strategy: digest
+    argocd-image-updater.argoproj.io/write-back-method: git
 
 
 spec:
@@ -17,7 +18,7 @@ spec:
     kustomize: {}
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: mock
   syncPolicy:
     automated:
       prune: true
