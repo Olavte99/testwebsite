@@ -2,13 +2,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: demo-site
-  namespace: mock
+  namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: my-image=ghcr.io/olavte99/testwebsite:latest
+    argocd-image-updater.argoproj.io/image-list: my-image=ghcr.io/olavte99/testwebsite
     argocd-image-updater.argoproj.io/my-image.update-strategy: digest
     argocd-image-updater.argoproj.io/write-back-method: git
 
-s
+
 spec:
   project: default
   source:
