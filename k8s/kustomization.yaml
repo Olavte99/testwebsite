@@ -22,8 +22,23 @@ patches:
                 prefix: ghcr.io
                 credentials: pullsecret:mock/ghcr-creds
                 default: true
-
- 
+  - target:
+      kind: ClusterRole
+      name: argocd-image-updater
+    patch: |
+      - op: add
+        path: /rules/-
+        value:
+          apiGroups: [""]
+          resources: ["secrets","configmaps"]
+          verbs: ["get","list","watch"]
+  - target:
+      kind: ClusterRoleBinding
+      name: argocd-image-updater
+    patch: |
+      - op: replace
+        path: /subjects/0/namespace
+        value: mock
 
 images:
 - name: ghcr.io/olavte99/testwebsite
