@@ -2,15 +2,16 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: argocd-image-updater-config
-  namespace: argocd
+  namespace: mock
   labels:
     app.kubernetes.io/name: argocd-image-updater-config
     app.kubernetes.io/part-of: argocd-image-updater
 data:
+  log.level: debug
   registries.conf: |
     registries:
       - name: GHCR
         api_url: https://ghcr.io
         prefix: ghcr.io
-        credentials: pullsecret:ghcr-creds-argo
+        credentials: pullsecret:mock/ghcr-creds
         default: true
