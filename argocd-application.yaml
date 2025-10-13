@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: demo-site
-  namespace: argocd
+  namespace: mock
   annotations:
     argocd-image-updater.argoproj.io/image-list: my-image=ghcr.io/olavte99/testwebsite:latest
     argocd-image-updater.argoproj.io/my-image.update-strategy: digest
