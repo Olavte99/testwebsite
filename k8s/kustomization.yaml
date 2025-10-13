@@ -20,7 +20,7 @@ patches:
               - name: GHCR
                 api_url: https://ghcr.io
                 prefix: ghcr.io
-                credentials: pullsecret:mock/ghcr-creds
+                credentials: pullsecret:argocd/ghcr-creds
                 default: true
 
  
