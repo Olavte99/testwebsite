@@ -4,7 +4,7 @@ metadata:
   name: demo-site
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: my-image=ghcr.io/olavte99/testwebsite
+    argocd-image-updater.argoproj.io/image-list: my-image=ghcr.io/olavte99/testwebsite:latest
     argocd-image-updater.argoproj.io/my-image.update-strategy: digest
     argocd-image-updater.argoproj.io/write-back-method: git
 
