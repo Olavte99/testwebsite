@@ -15,3 +15,14 @@ data:
         prefix: ghcr.io
         credentials: pullsecret:mock/ghcr-creds
         default: true
+
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-image-updater-config
+  namespace: mock
+data:
+  interval: 5m

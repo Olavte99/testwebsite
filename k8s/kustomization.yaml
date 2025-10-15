@@ -7,16 +7,6 @@ resources:
   - deployment.yaml
   - service.yaml
 
-patches:
-  - target:
-      kind: Deployment
-      name: argocd-image-updater
-    patch: |
-      - op: add
-        path: /spec/template/spec/containers/0/args
-        value:
-          - --interval=5m
-
 images:
 - name: ghcr.io/olavte99/testwebsite
   newTag: latest
