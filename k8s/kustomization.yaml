@@ -9,19 +9,13 @@ resources:
 
 patches:
   - target:
-      kind: ConfigMap
-      name: argocd-image-updater-config
+      kind: Deployment
+      name: argocd-image-updater
     patch: |
       - op: add
-        path: /data
+        path: /spec/template/spec/containers/0/args
         value:
-          registries.conf: |
-            registries:
-              - name: GHCR
-                api_url: https://ghcr.io
-                prefix: ghcr.io
-                credentials: pullsecret:mock/ghcr-creds
-                default: true
+          - --interval=5m
 
 images:
 - name: ghcr.io/olavte99/testwebsite
