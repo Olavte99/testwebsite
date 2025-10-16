@@ -25,7 +25,3 @@ patches:
                 credentials: pullsecret:mock/ghcr-creds
                 default: true
 
-                
-images:
-- name: ghcr.io/olavte99/testwebsite
-  newTag: latest
