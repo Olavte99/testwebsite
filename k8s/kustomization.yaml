@@ -3,11 +3,29 @@ kind: Kustomization
 namespace: mock
 resources:
   - namespace.yaml
-  - config.yaml
   - argocd-image-updater-install.yaml
   - deployment.yaml
   - service.yaml
 
+
+patches:
+  - target:
+      kind: ConfigMap
+      name: argocd-image-updater-config
+    patch: |
+      - op: replace
+        path: /data
+        value:
+          interval: 10m
+          registries.conf: |
+            registries:
+              - name: GHCR
+                api_url: https://ghcr.io
+                prefix: ghcr.io
+                credentials: pullsecret:mock/ghcr-creds
+                default: true
+
+                
 images:
 - name: ghcr.io/olavte99/testwebsite
   newTag: latest
