@@ -6,7 +6,8 @@ resources:
   - argocd-image-updater-install.yaml
   - deployment.yaml
   - service.yaml
-
+  - deployment2.yaml
+  - service2.yaml
 
 patches:
   - target:

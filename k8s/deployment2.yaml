@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-site2
+  labels:
+    app: demo-site2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-site2
+  template:
+    metadata:
+      labels:
+        app: demo-site2
+    spec:
+      imagePullSecrets:
+        - name: ghcr-creds
+      containers:
+        - name: web2
+          # Image tag will be set by Kustomize's images transformer
+          image: ghcr.io/olavte99/test:latest
+          ports:
+            - containerPort: 80
+          readinessProbe:
+            httpGet: { path: /, port: 80 }
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          livenessProbe:
+            httpGet: { path: /, port: 80 }
+            initialDelaySeconds: 10
+            periodSeconds: 10
