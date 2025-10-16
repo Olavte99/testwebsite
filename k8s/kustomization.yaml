@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: mock
 resources:
   - namespace.yaml
+  - config.yaml
   - argocd-image-updater-install.yaml
   - deployment.yaml
   - service.yaml
