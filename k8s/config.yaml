@@ -8,6 +8,7 @@ metadata:
     app.kubernetes.io/part-of: argocd-image-updater
 data:
   log.level: debug
+  interval: 5m
   registries.conf: |
     registries:
       - name: GHCR
@@ -15,3 +16,5 @@ data:
         prefix: ghcr.io
         credentials: pullsecret:mock/ghcr-creds
         default: true
+
+  
