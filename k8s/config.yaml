@@ -7,8 +7,7 @@ metadata:
     app.kubernetes.io/name: argocd-image-updater-config
     app.kubernetes.io/part-of: argocd-image-updater
 data:
-  log.level: debug
-  interval: 5m
+  interval: 10m
   registries.conf: |
     registries:
       - name: GHCR
